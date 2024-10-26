@@ -1,0 +1,8 @@
+/target
+
+.*
+*.yml
+*.yaml
+
+!.gitignore
+!*example*

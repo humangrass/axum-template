@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+default-members = [
+    "services/template",
+]
+
+members = [
+    "domain/models",
+    "domain/repository",
+    "services/template",
+]
+
+[workspace.dependencies]
+models = { path = "domain/models" }
+repository = { path = "domain/repository" }

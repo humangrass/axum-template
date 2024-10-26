@@ -1,0 +1,31 @@
+app:
+  host: localhost
+  port: 3000
+database:
+  host: localhost
+  port: 5432
+  username: user
+  password: changeme123
+  database: test
+  max_open_cons: 10
+  min_idle_cons: 2
+  conn_max_lifetime:
+    secs: 900
+    nanos: 0
+  connection_timeout:
+    secs: 15
+    nanos: 0
+  idle_timeout:
+    secs: 3600
+    nanos: 0
+redis:
+  connection_url:
+  host: localhost
+  port: 6379
+  username:
+  password:
+  db: 0
+  connection_timeout:
+    secs: 15
+    nanos: 0
+  connection_pool_size: 10
