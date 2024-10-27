@@ -1,9 +1,11 @@
 [package]
-name = "repository"
+name = "service"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 models = { workspace = true }
-anyhow = "1.0.91"
+repository = { workspace = true }
 sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "chrono"] }
+multitool-hg = "0.1"
+anyhow = "1.0.91"

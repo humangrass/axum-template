@@ -1,15 +1,17 @@
 [workspace]
 resolver = "2"
 default-members = [
-    "services/template",
+    "services/auth",
 ]
 
 members = [
     "domain/models",
     "domain/repository",
-    "services/template",
+    "domain/service",
+    "services/auth",
 ]
 
 [workspace.dependencies]
 models = { path = "domain/models" }
 repository = { path = "domain/repository" }
+service = { path = "domain/service" }

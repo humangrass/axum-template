@@ -6,7 +6,7 @@ use multitool_hg::logger::tracer_logger::LogLevel;
 #[command(author, version, about, long_about = None)]
 pub struct Cli {
     /// Sets a custom path to config file
-    #[arg(short, long, value_name = "CONFIG_FILE", default_value = "template.config.yaml")]
+    #[arg(short, long, value_name = "CONFIG_FILE", default_value = "auth.config.yaml")]
     pub config: PathBuf,
 
     /// Sets a custom log level
@@ -34,7 +34,7 @@ mod tests {
     #[test]
     fn test_default_arguments() {
         let args = Cli::try_parse_from(&["test-app"]).unwrap();
-        assert_eq!(args.config, PathBuf::from("template.config.yaml"));
+        assert_eq!(args.config, PathBuf::from("auth.config.yaml"));
         assert_eq!(args.log_level, LogLevel::Info);
     }
 

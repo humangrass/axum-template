@@ -13,13 +13,13 @@ pub struct AppConfig {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-pub struct TemplateConfig {
+pub struct AuthConfig {
     pub database: DatabaseConfig,
     pub redis: RedisConfig,
     pub app: AppConfig,
 }
 
-impl TemplateConfig {
+impl AuthConfig {
     pub(crate) fn new(file_path: &Path) -> anyhow::Result<Self> {
         let mut file = File::open(file_path)
             .map_err(|err| anyhow!("Can't open file {:?}: {}", file_path, err))?;

@@ -1,11 +1,12 @@
 [package]
-name = "template"
+name = "auth"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 models = { workspace = true }
 repository = { workspace = true }
+service = { workspace = true }
 multitool-hg = { version = "0.1", features = ["full"] }
 anyhow = "1"
 serde = { version = "1", features = ["derive"] }
@@ -16,3 +17,5 @@ axum = "0.7"
 utoipa = { version = "5", features = ["axum_extras"] }
 utoipa-scalar = { version = "0.2", features = ["axum"] }
 log = "0.4"
+bcrypt = "0.15.1"
+chrono = "0.4.38"
