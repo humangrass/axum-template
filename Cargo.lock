@@ -152,6 +152,7 @@ dependencies = [
  "log",
  "models",
  "multitool-hg",
+ "regex",
  "repository",
  "serde",
  "serde_yaml",
