@@ -1,7 +1,7 @@
 use axum::{Router, routing::post, extract::{Extension, Json}, http::StatusCode};
 use std::sync::Arc;
 use models::user::User;
-use service::auth::AuthState;
+use crate::app::AppState;
 use crate::structs::users::CreateUserRequest;
 
 #[utoipa::path(
@@ -14,7 +14,7 @@ use crate::structs::users::CreateUserRequest;
     )
 )]
 pub async fn create_user(
-    Extension(state): Extension<Arc<AuthState>>,
+    Extension(state): Extension<Arc<AppState>>,
     Json(payload): Json<CreateUserRequest>,
 ) -> Result<Json<User>, StatusCode> {
     let user = payload.model();

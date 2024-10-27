@@ -7,11 +7,9 @@ default-members = [
 members = [
     "domain/models",
     "domain/repository",
-    "domain/service",
     "services/auth",
 ]
 
 [workspace.dependencies]
 models = { path = "domain/models" }
 repository = { path = "domain/repository" }
-service = { path = "domain/service" }

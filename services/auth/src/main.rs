@@ -6,13 +6,14 @@ use multitool_hg::database::postgres::new_postgres_pool;
 use multitool_hg::logger::tracer_logger::new_tracer_logger;
 use multitool_hg::rediska::client::Rediska;
 use tokio::signal;
-use service::auth::AuthState;
+use crate::app::AppState;
 use crate::cli::Cli;
 
 mod cli;
 mod config;
 mod api;
 mod structs;
+mod app;
 
 #[tokio::main]
 async fn main() {
@@ -30,7 +31,7 @@ async fn run() -> anyhow::Result<()> {
 
     let redis_pool = Rediska::new(config.redis).await.expect("Failed to create Redis poll");
     let database_pool = new_postgres_pool(config.database).await.expect("Failed to create Postgres pool");
-    let app_state = Arc::new(AuthState::new(database_pool, redis_pool));
+    let app_state = Arc::new(AppState::new(database_pool, redis_pool));
 
     let app = api::create_router(app_state);
 

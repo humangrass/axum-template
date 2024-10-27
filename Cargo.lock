@@ -155,7 +155,7 @@ dependencies = [
  "repository",
  "serde",
  "serde_yaml",
- "service",
+ "sqlx",
  "tokio",
  "utoipa",
  "utoipa-scalar",
@@ -1589,17 +1589,6 @@ dependencies = [
  "ryu",
  "serde",
  "unsafe-libyaml",
-]
-
-[[package]]
-name = "service"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "models",
- "multitool-hg",
- "repository",
- "sqlx",
 ]
 
 [[package]]

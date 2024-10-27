@@ -2,7 +2,7 @@ use std::sync::Arc;
 use axum::{Extension, Router};
 use utoipa::OpenApi;
 use utoipa_scalar::{Scalar, Servable};
-use service::auth::AuthState;
+use crate::app::AppState;
 
 pub mod users;
 
@@ -17,7 +17,7 @@ pub mod users;
 )]
 struct ApiDoc;
 
-pub fn create_router(app_state: Arc<AuthState>) -> Router {
+pub fn create_router(app_state: Arc<AppState>) -> Router {
     let api_router = Router::new()
         .nest("/api/users", users::router());
 
